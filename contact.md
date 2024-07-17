@@ -4,6 +4,4 @@ title: Kontakt
 permalink: /contact/
 ---
 
-# Kontakt
-
-Kontaktdaten hier.
+jens.pippig@gmail.com

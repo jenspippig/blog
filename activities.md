@@ -4,8 +4,6 @@ title: Aktivitäten
 permalink: /activities/
 ---
 
-# Aktivitäten
-
 Hier sind meine Aktivitäten:
 
 - [JP1](../jp1/)
