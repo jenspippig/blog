@@ -3,61 +3,64 @@ layout: default
 ---
 
 <div class="page">
-    <h1>{{ page.title }}</h1>
-    
-    <!-- Check if there is a title image -->
-    {% if page.media_files.size > 0 %}
-        {% assign title_media = page.media_files[0] %}
-        {% if title_media.type == 'image' %}
-            <img src="https://dgtzuqphqg23d.cloudfront.net/{{ title_media.id }}.jpg" alt="{{ title_media.description }}">
-        {% elsif title_media.type == 'video' %}
-            <img src="https://image.mux.com/{{ title_media.id }}/thumbnail.jpg" alt="{{ title_media.description }}">
-        {% endif %}
-    {% endif %}
-    
-    <div class="activity-info">
-        <h2>Eckdaten</h2>
-        <p>Aktivität ID: {{ page.activity_id }}</p>
-        <p>Startzeit: {{ page.start_time | date: "%a. %d.%m.%Y %H:%M:%S %z" }}</p>
-        {% if page.start_location == page.end_location %}
-        <p>Start- u. Zielort: {{ page.start_location }}</p>
-        {% else %}
-        <p>Startort: {{ page.start_location }}</p>
-        <p>Zielort: {{ page.end_location }}</p>
-        {% endif %}
-        <p>Sportart: {{ page.activity_type }}</p>
-        <p>Eventtyp: {{ page.event_type }}</p>
-        <p>Bewegungszeit: {{ page.duration }}</p>
-        <p>Distanz: {{ page.distance }} km</p>
-        <p>Anstieg: {{ page.elevation_gain }} m</p>
-        <p>Abstieg: {{ page.elevation_loss }} m</p>
-        <p>Garmin ID: <a href="https://connect.garmin.com/modern/activity/{{ page.garmin_id }}">{{ page.garmin_id }}</a></p>
-        <p>Strava ID: <a href="https://www.strava.com/activities/{{ page.strava_id }}">{{ page.strava_id }}</a></p>
-        <p>GPX Datei: <a href="https://www.strava.com/activities/11897140166/export_gpx">Download Link</a></p>
-    </div>
+	<h1>{{ page.title }}</h1>
+	
+	<!-- Check if there is a title image -->
+	{% if page.media_files.size > 0 %}
+		{% assign title_media = page.media_files[0] %}
+		{% if title_media.type == 'image' %}
+			<img src="https://dgtzuqphqg23d.cloudfront.net/{{ title_media.id }}.jpg" alt="{{ title_media.description }}">
+		{% elsif title_media.type == 'video' %}
+			<img src="https://image.mux.com/{{ title_media.id }}/thumbnail.jpg" alt="{{ title_media.description }}">
+		{% endif %}
+	{% endif %}
+	
+	<div class="activity-info">
+		<h2>Eckdaten</h2>
+		<p>Aktivität ID: {{ page.activity_id }}</p>
+		<p>Startzeit: {{ page.start_time | date: "%a. %d.%m.%Y %H:%M:%S %z" }}</p>
+		{% if page.start_location == page.end_location %}
+		<p>Start- u. Zielort: {{ page.start_location }}</p>
+		{% else %}
+		<p>Startort: {{ page.start_location }}</p>
+		<p>Zielort: {{ page.end_location }}</p>
+		{% endif %}
+		<p>Sportart: {{ page.activity_type }}</p>
+		<p>Eventtyp: {{ page.event_type }}</p>
+		<p>Bewegungszeit: {{ page.duration }}</p>
+		<p>Distanz: {{ page.distance }} km</p>
+		<p>Anstieg: {{ page.elevation_gain }} m</p>
+		<p>Abstieg: {{ page.elevation_loss }} m</p>
+		<p>Garmin ID: <a href="https://connect.garmin.com/modern/activity/{{ page.garmin_id }}">{{ page.garmin_id }}</a></p>
+		<p>Strava ID: <a href="https://www.strava.com/activities/{{ page.strava_id }}">{{ page.strava_id }}</a></p>
+		<p>GPX Datei: <a href="https://www.strava.com/activities/11897140166/export_gpx">Download Link</a></p>
+	</div>
 
-    <div class="description">
-        <h2>Beschreibung</h2>
-        {{ page.description | markdownify }}
-    </div>
+	<div class="description">
+		<h2>Beschreibung</h2>
+		{{ page.description | markdownify }}
+	</div>
 
     <div class="media">
-        <h2>Medien</h2>
-        {% for media in page.media_files %}
-            {% if media.type == 'image' %}
-                <figure>
-                    <img src="https://dgtzuqphqg23d.cloudfront.net/{{ media.id }}.jpg" alt="{{ media.description }}">
-                    <figcaption>{{ media.description }}</figcaption>
-                </figure>
-            {% elsif media.type == 'video' %}
-                <figure>
-                    <video controls poster="https://image.mux.com/{{ media.id }}/thumbnail.jpg">
-                        <source src="https://stream.mux.com/{{ media.id }}.m3u8" type="application/x-mpegURL">
-                        Your browser does not support the video tag.
-                    </video>
-                    <figcaption>{{ media.description }}</figcaption>
-                </figure>
-            {% endif %}
-        {% endfor %}
+    	<h2>Medien</h2>
+    	{% for media in page.media_files %}
+    		{% if media.type == 'image' %}
+    			<figure style="text-align: center;">
+    				<a href="https://dgtzuqphqg23d.cloudfront.net/{{ media.id }}.jpg" target="_blank">
+    					<img src="https://dgtzuqphqg23d.cloudfront.net/{{ media.id }}.jpg" alt="{{ media.description }}" style="max-height: 500px; width: auto; display: block; margin: 0 auto;">
+    				</a>
+    				<figcaption style="text-align: center;">{{ media.description }}</figcaption>
+    			</figure>
+    		{% elsif media.type == 'video' %}
+    			<figure style="text-align: center;">
+    				<video controls style="max-height: 500px; width: auto; display: block; margin: 0 auto;">
+    					<source src="https://stream.mux.com/{{ media.id }}.m3u8" type="application/x-mpegURL">
+    					Your browser does not support the video tag.
+    				</video>
+    				<figcaption style="text-align: center;">{{ media.description }}</figcaption>
+    			</figure>
+    		{% endif %}
+    	{% endfor %}
     </div>
+
 </div>
