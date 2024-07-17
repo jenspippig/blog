@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakt | Jens Pippig</title>
     <link rel="stylesheet" href="/blog/css/style.css">
+    <!-- Include Video.js CSS -->
+    <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
+    <!-- Include Video.js JavaScript -->
+    <script src="https://vjs.zencdn.net/7.11.4/video.js"></script>
 </head>
 <body>
     <header>
@@ -29,5 +33,13 @@
 
         </div>
     </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var players = document.querySelectorAll('.video-js');
+        players.forEach(function(player) {
+            videojs(player);
+        });
+    });
+  </script>
 </body>
 </html>

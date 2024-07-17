@@ -70,3 +70,9 @@ footer {
     border-bottom: 1px solid #e8491d;
     padding-bottom: 10px;
 }
+
+.video-js {
+    width: 100%;
+    max-height: 500px;
+    margin: 0 auto;
+}

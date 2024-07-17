@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Erkundung des Tracciolino Wegs Teil 2 mit Stephi & Lennox | Jens Pippig</title>
     <link rel="stylesheet" href="/blog/css/style.css">
+    <!-- Include Video.js CSS -->
+    <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
+    <!-- Include Video.js JavaScript -->
+    <script src="https://vjs.zencdn.net/7.11.4/video.js"></script>
 </head>
 <body>
     <header>
@@ -60,33 +64,42 @@
 
 	</div>
 
-    <div class="media">
-    	<h2>Medien</h2>
-    	
-    		
-    			<figure style="text-align: center;">
-    				<a href="https://dgtzuqphqg23d.cloudfront.net/hCWDbNBWbTyoVAfHVOr0y_NnysYCpIcduPVdQXTF0vI-2048x1365.jpg" target="_blank">
-    					<img src="https://dgtzuqphqg23d.cloudfront.net/hCWDbNBWbTyoVAfHVOr0y_NnysYCpIcduPVdQXTF0vI-2048x1365.jpg" alt="Titelbild: Eingestürzte Galerie des Tracciolino Wegs im Valle Ladrogno" style="max-height: 500px; width: auto; display: block; margin: 0 auto;">
-    				</a>
-    				<figcaption style="text-align: center;">Titelbild: Eingestürzte Galerie des Tracciolino Wegs im Valle Ladrogno</figcaption>
-    			</figure>
-    		
-    	
-    		
-    			<figure style="text-align: center;">
-    				<video controls style="max-height: 500px; width: auto; display: block; margin: 0 auto;">
-    					<source src="https://stream.mux.com/Er02Gb45HUf3ia3MGhSSk8QCSZaN2UKi00ht01AyI2C2P4.m3u8" type="application/x-mpegURL">
-    					Your browser does not support the video tag.
-    				</video>
-    				<figcaption style="text-align: center;">Kleiner Videozusammenschnitt, Teil 1: Von Campo ins Valle Ladrogno</figcaption>
-    			</figure>
-    		
-    	
-    </div>
+<div class="media">
+    <h2>Medien</h2>
+    
+        
+            <figure style="text-align: center;">
+                <a href="https://dgtzuqphqg23d.cloudfront.net/hCWDbNBWbTyoVAfHVOr0y_NnysYCpIcduPVdQXTF0vI-2048x1365.jpg">
+                    <img src="https://dgtzuqphqg23d.cloudfront.net/hCWDbNBWbTyoVAfHVOr0y_NnysYCpIcduPVdQXTF0vI-2048x1365.jpg" alt="Titelbild: Eingestürzte Galerie des Tracciolino Wegs im Valle Ladrogno" style="max-height: 500px; width: auto; display: block; margin: 0 auto;">
+                </a>
+                <figcaption style="text-align: center;">Titelbild: Eingestürzte Galerie des Tracciolino Wegs im Valle Ladrogno</figcaption>
+            </figure>
+        
+    
+        
+            <figure style="text-align: center;">
+                <video id="video_Er02Gb45HUf3ia3MGhSSk8QCSZaN2UKi00ht01AyI2C2P4" class="video-js vjs-default-skin" controls preload="auto" style="max-height: 500px; width: auto; display: block; margin: 0 auto;">
+                    <source src="https://stream.mux.com/Er02Gb45HUf3ia3MGhSSk8QCSZaN2UKi00ht01AyI2C2P4.m3u8" type="application/x-mpegURL">
+                    Your browser does not support the video tag.
+                </video>
+                <figcaption style="text-align: center;">Kleiner Videozusammenschnitt, Teil 1: Von Campo ins Valle Ladrogno</figcaption>
+            </figure>
+        
+    
+</div>
+
 
 </div>
 
         </div>
     </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var players = document.querySelectorAll('.video-js');
+        players.forEach(function(player) {
+            videojs(player);
+        });
+    });
+  </script>
 </body>
 </html>
