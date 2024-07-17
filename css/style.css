@@ -70,3 +70,9 @@ footer {
     border-bottom: 1px solid #e8491d;
     padding-bottom: 10px;
 }
+
+.vjs-big-play-button {
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
