@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: activity
 title: JP1
 permalink: /jp1/
 ---

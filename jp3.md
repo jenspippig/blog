@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: activity
 title: JP3
 permalink: /jp3/
 ---
