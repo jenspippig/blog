@@ -1,6 +1,14 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
+layout: default
+title: Startseite
 ---
+
+# Startseite
+
+Willkommen auf meiner GitHub Pages Seite!
+
+## Liste der Unterseiten
+
+- [JP2970](./_posts/jp2970.md): Beschreibung der Tour JP2970
+- Weitere Seiten...
+
