@@ -41,27 +41,27 @@ layout: default
 		{{ page.description | markdownify }}
 	</div>
 
-<div class="media">
-    <h2>Medien</h2>
-    {% for media in page.media_files %}
-        {% if media.type == 'image' %}
-            <figure style="text-align: center;">
-                <a href="https://dgtzuqphqg23d.cloudfront.net/{{ media.id }}.jpg">
-                    <img src="https://dgtzuqphqg23d.cloudfront.net/{{ media.id }}.jpg" alt="{{ media.description }}" style="max-height: 500px; width: auto; display: block; margin: 0 auto;">
-                </a>
-                <figcaption style="text-align: center;">{{ media.description }}</figcaption>
-            </figure>
-        {% elsif media.type == 'video' %}
-            <figure style="text-align: center;">
-                <video id="video_{{ media.id }}" class="video-js vjs-default-skin" controls preload="auto" style="max-height: 500px; width: auto; display: block; margin: 0 auto;">
-                    <source src="https://stream.mux.com/{{ media.id }}.m3u8" type="application/x-mpegURL">
-                    Your browser does not support the video tag.
-                </video>
-                <figcaption style="text-align: center;">{{ media.description }}</figcaption>
-            </figure>
-        {% endif %}
-    {% endfor %}
-</div>
+   <div class="media">
+        <h2>Medien</h2>
+        {% for media in page.media_files %}
+            {% if media.type == 'image' %}
+                <figure style="text-align: center;">
+                    <a href="https://dgtzuqphqg23d.cloudfront.net/{{ media.id }}.jpg">
+                        <img src="https://dgtzuqphqg23d.cloudfront.net/{{ media.id }}.jpg" alt="{{ media.description }}" style="max-height: 500px; width: auto; display: block; margin: 0 auto;">
+                    </a>
+                    <figcaption style="text-align: center;">{{ media.description }}</figcaption>
+                </figure>
+            {% elsif media.type == 'video' %}
+                <figure style="text-align: center;">
+                    <video id="video_{{ media.id }}" class="video-js vjs-default-skin" controls preload="auto" style="max-height: 500px; max-width: 100%; width: auto; display: block; margin: 0 auto;">
+                        <source src="https://stream.mux.com/{{ media.id }}.m3u8" type="application/x-mpegURL">
+                        Your browser does not support the video tag.
+                    </video>
+                    <figcaption style="text-align: center;">{{ media.description }}</figcaption>
+                </figure>
+            {% endif %}
+        {% endfor %}
+    </div>
 
 
 </div>
