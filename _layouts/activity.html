@@ -53,7 +53,7 @@ layout: default
                 </figure>
             {% elsif media.type == 'video' %}
                 <figure style="text-align: center;">
-                    <video id="video_{{ media.id }}" class="video-js vjs-default-skin" controls preload="auto" style="max-height: 500px; max-width: 100%; width: auto; display: block; margin: 0 auto;">
+                    <video class="video-js vjs-default-skin" controls preload="auto" width="100%" height="auto">
                         <source src="https://stream.mux.com/{{ media.id }}.m3u8" type="application/x-mpegURL">
                         Your browser does not support the video tag.
                     </video>

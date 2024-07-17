@@ -78,7 +78,7 @@
         
             
                 <figure style="text-align: center;">
-                    <video id="video_Er02Gb45HUf3ia3MGhSSk8QCSZaN2UKi00ht01AyI2C2P4" class="video-js vjs-default-skin" controls preload="auto" style="max-height: 500px; max-width: 100%; width: auto; display: block; margin: 0 auto;">
+                    <video class="video-js vjs-default-skin" controls preload="auto" width="100%" height="auto">
                         <source src="https://stream.mux.com/Er02Gb45HUf3ia3MGhSSk8QCSZaN2UKi00ht01AyI2C2P4.m3u8" type="application/x-mpegURL">
                         Your browser does not support the video tag.
                     </video>
@@ -94,12 +94,12 @@
         </div>
     </main>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var players = document.querySelectorAll('.video-js');
-        players.forEach(function(player) {
-            videojs(player);
-        });
+document.addEventListener('DOMContentLoaded', function() {
+    var players = document.querySelectorAll('.video-js');
+    players.forEach(function(player) {
+        videojs(player, { /* Optionen hier */ });
     });
+});
   </script>
 </body>
 </html>
