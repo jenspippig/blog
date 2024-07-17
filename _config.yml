@@ -6,8 +6,12 @@ url: "https://jenspippig.github.io"
 twitter_username: ""
 github_username: "jenspippig"
 
+# Permalinks for posts
 permalink: /:title/
 
-theme: minima
-plugins:
-  - jekyll-feed
+# Exclude from processing
+exclude:
+  - .DS_Store
+  - _site
+  - Gemfile
+  - Gemfile.lock

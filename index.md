@@ -1,14 +1,15 @@
 ---
-layout: default
-title: Startseite
+layout: page
+title: Home
+permalink: /
 ---
 
 # Startseite
 
 Willkommen auf meiner GitHub Pages Seite!
 
-## Liste der Unterseiten
+## Seiten
 
-- [JP2970](./jp2970.md): Beschreibung der Tour JP2970
-- Weitere Seiten...
-
+- [Aktivitäten](./activities/)
+- [Statistiken](./statistics/)
+- [Kontakt](./contact/)
