@@ -4,19 +4,52 @@ layout: default
 
 <div class="activity">
     <h1>{{ page.title }}</h1>
-    {% if page.title_image %}
-        <div class="title-image">
-            <img src="{{ page.title_image }}" alt="{{ page.title }}">
-        </div>
-    {% endif %}
-    {{ content }}
-</div>
 
-<style>
-    .title-image img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 3 / 2;
-        object-fit: cover;
-    }
-</style>
+    <div class="activity-info">
+        <h2>Eckdaten</h2>
+        <p><strong>Startzeit:</strong> {{ page.start_time | date: "%a. %d.%m.%Y %H:%M:%S %z" }}</p>
+        
+        {% if page.start_location == page.end_location %}
+            <p><strong>Start- u. Zielort:</strong> {{ page.start_location }}</p>
+        {% else %}
+            <p><strong>Startort:</strong> {{ page.start_location }}</p>
+            <p><strong>Zielort:</strong> {{ page.end_location }}</p>
+        {% endif %}
+        
+        <p><strong>Sportart:</strong> {{ page.activity_type }}</p>
+        <p><strong>Eventtyp:</strong> {{ page.event_type }}</p>
+        <p><strong>Bewegungszeit:</strong> {{ page.duration }}</p>
+        <p><strong>Distanz:</strong> {{ page.distance }} km</p>
+        <p><strong>Anstieg:</strong> {{ page.elevation_gain }} m</p>
+        <p><strong>Abstieg:</strong> {{ page.elevation_loss }} m</p>
+        <p><strong>Garmin ID:</strong> {{ page.garmin_id }}</p>
+        <p><strong>Strava ID:</strong> {{ page.strava_id }}</p>
+    </div>
+
+    <div class="activity-description">
+        <h2>Beschreibung</h2>
+        {{ content }}
+    </div>
+
+    <div class="activity-media">
+        <h2>Medien</h2>
+        {% if page.media_files %}
+            <ul>
+            {% for media in page.media_files %}
+                <li>
+                    {% if media.type == "image" %}
+                        <img src="https://dgtzuqphqg23d.cloudfront.net/{{ media.id }}.jpg" alt="{{ media.description }}">
+                    {% elsif media.type == "video" %}
+                        <video width="320" height="240" controls>
+                            <source src="https://stream.mux.com/{{ media.id }}.m3u8" type="application/x-mpegURL">
+                            Your browser does not support the video tag.
+                        </video>
+                    {% endif %}
+                    <p>{{ media.description }}</p>
+                </li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+</div>
